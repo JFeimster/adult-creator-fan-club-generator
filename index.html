@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#09090F">
+  <meta name="description" content="Generate fan club names, VIP tiers, slogans, and merch ideas for your creator community. Free, playful, and private.">
+  <title>Fan Club Name Lab | AdultCreators AI</title>
+  <link rel="stylesheet" href="./assets/css/styles.css">
+  <link rel="stylesheet" href="./assets/css/animations.css">
+  <script type="module" src="./assets/js/app.js"></script>
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="topbar wrap">
+    <a class="brand" href="#top" aria-label="AdultCreators AI Fan Club Name Lab home"><span class="brand-mark">✳</span><span>ADULTCREATORS <strong>AI</strong></span></a>
+    <a class="top-link" href="#generator">THE NAME MACHINE <span aria-hidden="true">↗</span></a>
+  </header>
+  <main id="top">
+    <section class="hero wrap">
+      <div class="micro"><span class="status-dot"></span> FREE CREATOR TOOL // NO SIGNUP</div>
+      <h1>GIVE YOUR FANS<br>A <em>NAME</em> BEFORE<br>THEY NAME THEMSELVES<br><span class="outlined">SOMETHING WORSE.</span></h1>
+      <p>Fan club names. VIP tiers. Ridiculous merch potential. One little machine to turn your audience into a community.</p>
+      <a class="primary hero-cta" href="#generator">NAME MY FAN CLUB <span>↘</span></a>
+      <div class="hero-stickers" aria-hidden="true"><span class="sticker pink">VIP ENERGY ★</span><span class="sticker cyan">FANDOM LOADING...</span><span class="sticker purple">100% YOUR VIBE</span></div>
+    </section>
+
+    <section id="generator" class="workspace wrap" aria-label="Fan club naming generator">
+      <div class="section-head"><div><span class="eyebrow">01 // THE BRIEF</span><h2>BUILD YOUR <span>FANDOM</span></h2></div><p>Fill out as much or as little as you want.</p></div>
+      <form id="generator-form" class="generator-panel">
+        <label>CREATOR NAME <input id="creator-name" name="creatorName" maxlength="36" placeholder="e.g. Nova" autocomplete="off"></label>
+        <label>YOUR VIBE <select id="vibe" name="vibe"><option value="playful">Playful chaos</option><option value="luxury">Luxury icon</option><option value="goth">Dark / alternative</option><option value="romantic">Dreamy romantic</option><option value="rebel">Unapologetic rebel</option><option value="cosmic">Cosmic fantasy</option></select></label>
+        <label>PERSONA <select id="persona" name="persona"><option value="muse">Muse</option><option value="icon">Icon</option><option value="artist">Artist</option><option value="cosplayer">Cosplayer</option><option value="gamer">Gamer</option><option value="coach">Confident coach</option></select></label>
+        <label>AUDIENCE STYLE <select id="audience" name="audience"><option value="inner">Inner circle</option><option value="hype">Hype squad</option><option value="exclusive">Exclusive club</option><option value="friendly">Besties</option></select></label>
+        <label>PLATFORM <select id="platform" name="platform"><option value="any">Any / platform-neutral</option><option value="onlyfans">OnlyFans</option><option value="fansly">Fansly</option><option value="fanvue">Fanvue</option><option value="loyalfans">LoyalFans</option><option value="other">Other</option></select></label>
+        <label>FAVORITE WORD <input id="favorite-word" name="favoriteWord" maxlength="24" placeholder="e.g. midnight" autocomplete="off"></label>
+        <div class="form-actions"><button type="submit" class="primary">✦ NAME MY FAN CLUB</button><button type="button" id="surprise" class="secondary">↝ SURPRISE ME</button></div>
+        <p class="form-note">Your inputs stay in this browser. No account or server-side AI calls.</p>
+      </form>
+    </section>
+
+    <section id="results" class="results wrap" hidden aria-live="polite">
+      <div class="section-head"><div><span class="eyebrow">02 // FRESH OFF THE MACHINE</span><h2>YOUR NEW <span>FAN NAMES</span></h2></div><button type="button" id="remix" class="secondary">↻ REMIX NAMES</button></div>
+      <div id="name-grid" class="name-grid"></div>
+      <div class="section-head kit-head"><div><span class="eyebrow">03 // THE WHOLE PACKAGE</span><h2>FAN CLUB <span>BRAND KIT</span></h2></div></div>
+      <div class="kit-grid">
+        <article class="kit-tile"><h3>VIP TIERS</h3><ol id="tier-list"></ol></article>
+        <article class="kit-tile"><h3>TAGLINE</h3><p id="tagline" class="kit-quote"></p><button class="mini-btn" data-copy-target="tagline">COPY</button></article>
+        <article class="kit-tile"><h3>WELCOME MESSAGE</h3><p id="welcome"></p><button class="mini-btn" data-copy-target="welcome">COPY</button></article>
+        <article class="kit-tile"><h3>MERCH PHRASES</h3><ul id="merch-list"></ul></article>
+      </div>
+      <div class="preview-area">
+        <div><span class="eyebrow">04 // MAKE IT OFFICIAL</span><h2>THE FAN CLUB CARD</h2><p>A shareable badge for your newly named fandom. Pick a name above to update the card.</p><div class="share-actions"><button id="download-card" type="button" class="primary">↓ DOWNLOAD PNG</button><button id="share-card" type="button" class="secondary">↗ SHARE</button><button id="copy-kit" type="button" class="secondary">COPY BRAND KIT</button></div></div>
+        <canvas id="fan-card" width="1000" height="600" role="img" aria-label="Generated fan club membership card preview"></canvas>
+      </div>
+      <p id="feedback" class="feedback" role="status"></p>
+    </section>
+
+    <section class="saved wrap" id="saved"><div class="section-head"><div><span class="eyebrow">05 // KEEP THE GOOD ONES</span><h2>YOUR <span>FAVORITES</span></h2></div><p id="saved-count">0 names saved on this device</p></div><div id="favorites-list" class="favorites-list"><p class="empty">Favorite a result to keep it here.</p></div></section>
+    <footer class="wrap footer"><div>✳ ADULTCREATORS AI <span>© <span id="year"></span></span></div><p>Original community branding ideas, made for adult creators. Check name availability and platform rules before using a name publicly. Not affiliated with any platform listed in the generator.</p></footer>
+  </main>
+</body>
+</html>
